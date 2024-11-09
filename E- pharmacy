@@ -1,0 +1,159 @@
+
+_Project Overview_
+
+- Project Name: E-Pharmacy
+- Project Description: E-Pharmacy is an online platform connecting patients with health centers for medication prescriptions and purchases, utilizing Artificial Intelligence (AI) for enhanced user experience and improved healthcare outcomes.
+
+_Functional Components_
+
+1. Disease Diagnosis (AI-powered)
+    - Symptom Checker: Patients input symptoms, and AI algorithms analyze data to identify potential diseases.
+    - Disease Database: Comprehensive database of diseases, symptoms, and treatment options.
+2. E-Pharmacy
+    - Medication Database: Comprehensive database of medications, including dosage, side effects, and interactions.
+    - Personalized Recommendations: AI-generated medication suggestions based on diagnosis and patient medical history.
+    - Online Pharmacy: Patients can purchase medications online, with options for delivery or pickup.
+3. Health Center Network
+    - Health Center Database: Comprehensive database of top-rated health centers, including specialties, locations, and patient reviews.
+    - AI-Powered Matching: Patients are matched with optimal health centers based on diagnosis, location, and treatment needs.
+    - Appointment Scheduling: Patients can schedule appointments online.
+
+_Use Case Diagrams_
+
+_Patient Use Cases:_
+
+1. Register/Log in
+2. Input symptoms for disease diagnosis
+3. View diagnosis and treatment options
+4. Purchase medication online
+5. Find and schedule appointments with health centers
+6. View patient dashboard (medical history, appointments, medication list)
+
+_Health Center Use Cases:_
+
+1. Register/Log in
+2. View patient profiles and medical history
+3. Receive patient appointment requests
+4. Manage health center profile and availability
+5. View patient reviews and ratings
+
+_AI Use Cases:_
+
+1. Analyze patient symptoms for disease diagnosis
+2. Generate personalized medication recommendations
+3. Match patients with optimal health centers
+
+_Sequence Diagrams_
+
+_Disease Diagnosis:_
+
+```
+mermaid
+sequenceDiagram
+    participant Patient as "Patient"
+    participant AI as "AI"
+    Patient->>AI: Input Symptoms
+    AI->>AI: Analyze Symptoms
+    AI->>Patient: Display Diagnosis
+```
+
+_Medication Recommendation:_
+
+```
+mermaid
+sequenceDiagram
+    participant Patient as "Patient"
+    participant AI as "AI"
+    Patient->>AI: View Diagnosis
+    AI->>AI: Generate Medication Recommendations
+    AI->>Patient: Display Recommendations
+```
+
+_Health Center Matching:_
+
+```
+mermaid
+sequenceDiagram
+    participant Patient as "Patient"
+    participant AI as "AI"
+    Patient->>AI: Input Location and Treatment Needs
+    AI->>AI: Match with Optimal Health Centers
+    AI->>Patient: Display Health Center Options
+```
+
+_Database Schema_
+
+```
+CREATE TABLE patients (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    medical_history TEXT
+);
+
+CREATE TABLE health_centers (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    specialties VARCHAR(255),
+    location VARCHAR(255)
+);
+
+CREATE TABLE diseases (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    symptoms VARCHAR(255),
+    treatment_options VARCHAR(255)
+);
+
+CREATE TABLE medications (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    dosage VARCHAR(255),
+    side_effects VARCHAR(255)
+);
+
+CREATE TABLE appointments (
+    id INT PRIMARY KEY,
+    patient_id INT,
+    health_center_id INT,
+    date DATE,
+    time TIME
+);
+```
+
+_AI Algorithms_
+
+1. Natural Language Processing (NLP) for symptom analysis
+2. Decision Trees for disease diagnosis
+3. Collaborative Filtering for medication recommendations
+
+_Github Repository_
+
+```
+e-pharmacy
+├── (link unavailable)
+├── docs
+│   ├── use_case_diagrams
+│   │   ├── patient_registration.png
+│   │   ├── disease_diagnosis.png
+│   │   └── ...
+│   ├── sequence_diagrams
+│   │   ├── disease_diagnosis.png
+│   │   ├── medication_recommendation.png
+│   │   └── ...
+│   └── system_architecture.png
+├── src
+│   ├── backend
+│   │   ├── api
+│   │   │   ├── controllers
+│   │   │   ├── models
+│   │   │   ├── routes
+│   │   │   └── services
+│   │   ├── database
+│   │   │   ├── migrations
+│   │   │   ├── schema.sql
+│   │   │   └── seeds.sql
+```
